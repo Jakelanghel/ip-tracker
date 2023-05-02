@@ -1,10 +1,8 @@
-import React from "react";
-import "./App.css";
-
+import Search from "./components/search/Search";
 function App() {
   return (
     <div className="container-app">
-      <p>Clean React App</p>
+      <Search />
     </div>
   );
 }
