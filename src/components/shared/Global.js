@@ -2,24 +2,39 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
-:root {
-    --very-dark-gray: hsl(0, 0%, 17%)
-    --dark-gray: hsl(0, 0%, 59%) 
-}
+    :root {
+        --very-dark-gray: hsl(0, 0%, 17%);
+        --dark-gray: hsl(0, 0%, 59%);
+        --white: hsl(0, 0%, 100%);
+    }
 
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    #root {
+        height: 100%
+    }
 
     html,
     body {
         height: 100%;
-        margin: 0;
-        padding: 0;
         font-family: 'Rubik', sans-serif;
+        color: var(--very-dark-gray);
 
     }
-    #root {
-        height: 100%
+
+    .container-app {
+        height: 100%;
+    }
+
+    .container-search {
+        height: 35%;
+    }
+
+    .leaflet-container {
+        height: 65%;
     }
 `;

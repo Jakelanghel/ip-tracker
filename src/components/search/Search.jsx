@@ -3,7 +3,7 @@ import SearchBar from "./search-bar/SearchBar";
 
 const Search = () => {
   return (
-    <ContainerSearch>
+    <ContainerSearch className="container-search">
       <h1>IP Address Tracker</h1>
       <SearchBar />
     </ContainerSearch>
