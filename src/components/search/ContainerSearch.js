@@ -4,6 +4,7 @@ import { images } from "../../constants/images";
 export const ContainerSearch = styled.div`
   width: 100%;
   background-image: url(${images.mobileBG});
+  background-repeat: no-repeat;
   text-align: center;
 
   h1 {
