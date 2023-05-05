@@ -3,7 +3,6 @@ import { PropTypes } from "prop-types";
 import usStates from "us-state-codes";
 
 const Results = (props) => {
-  // const locationString = `${props.location.city}, `;
   const { ip, isp, location } = props;
 
   const getAbbreviation = (stateName) => {
@@ -12,24 +11,25 @@ const Results = (props) => {
   };
 
   const state = getAbbreviation(location.region);
+  const locationString = `${location.city}, ${state} ${location.timezone}`;
 
   return (
     <StyledResults>
       <div className="container-data">
-        <h3>Ip Address</h3>
-        {ip}
+        <h3 className="title">Ip Address</h3>
+        <p className="data">{ip}</p>
       </div>
       <div className="container-data">
-        <h3>location</h3>
-        {state}
+        <h3 className="title">location</h3>
+        <p className="data">{locationString}</p>
       </div>
       <div className="container-data">
-        <h3>Time Zones</h3>
-        <p>UTC -5:00</p>
+        <h3 className="title">Time Zones</h3>
+        <p className="data">{location.timezone}</p>
       </div>
       <div className="container-data">
-        <h3>ISP</h3>
-        <p>{isp}</p>
+        <h3 className="title">ISP</h3>
+        <p className="data">{isp}</p>
       </div>
     </StyledResults>
   );

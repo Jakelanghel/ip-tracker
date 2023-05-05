@@ -36,5 +36,6 @@ export const GlobalStyles = createGlobalStyle`
 
     .leaflet-container {
         height: 65%;
+        z-index: 0;
     }
 `;

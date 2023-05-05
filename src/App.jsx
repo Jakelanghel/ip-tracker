@@ -5,10 +5,24 @@ import Search from "./components/search/Search";
 import Map from "./components/map/Map";
 
 function App() {
-  const [ipData, setIpData] = useState(null);
+  // useFetch_Ip(setIpData);
 
-  console.log(ipData);
-  useFetch_Ip(setIpData);
+  const tstData = {
+    ip: "24.239.99.202",
+    isp: "Armstrong",
+    location: {
+      country: "US",
+      region: "Pennsylvania",
+      city: "North Butler",
+      geonameId: 5203600,
+      lat: 40.87173,
+      lng: -79.87978,
+      postalCode: "",
+      timezone: "-04:00",
+    },
+  };
+
+  const [ipData, setIpData] = useState(tstData);
 
   if (!ipData) {
     return <h1>Loading..</h1>;
@@ -17,7 +31,7 @@ function App() {
   return (
     <div className="container-app">
       <GlobalStyles />
-      <Search data={ipData} />
+      <Search data={ipData} setData={setIpData} />
       <Map />
     </div>
   );

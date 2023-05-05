@@ -6,6 +6,7 @@ export const ContainerSearch = styled.div`
   background-image: url(${images.mobileBG});
   background-repeat: no-repeat;
   text-align: center;
+  position: relative;
 
   h1 {
     color: var(--white);

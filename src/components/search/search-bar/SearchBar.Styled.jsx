@@ -16,10 +16,13 @@ export const StyledSearchBar = styled.div`
 
   input {
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
     background-color: var(--white);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    display: flex;
+    border: solid 3px transparent;
     display: flex;
   }
 
@@ -27,5 +30,9 @@ export const StyledSearchBar = styled.div`
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: var(--very-dark-gray);
+  }
+
+  .error {
+    border: solid 3px red;
   }
 `;
