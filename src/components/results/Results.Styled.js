@@ -8,7 +8,7 @@ export const StyledResults = styled.div`
 
   position: absolute;
   z-index: 1;
-  bottom: -75%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -17,6 +17,7 @@ export const StyledResults = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  text-align: center;
 
   .title {
     text-transform: uppercase;

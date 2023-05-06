@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
 
     .container-app {
         height: 100%;
+        position: relative;
     }
 
     .container-search {

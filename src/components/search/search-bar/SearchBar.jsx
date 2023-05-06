@@ -2,14 +2,23 @@ import { useState } from "react";
 import { PropTypes } from "prop-types";
 import { StyledSearchBar } from "./SearchBar.Styled";
 import { images } from "../../../constants/images";
-import { useFetch_Search_Ip } from "../../../hooks/useFetch_Search_Ip";
+import { isValidIPAddress } from "../util/isValidIPAddress";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
+  const { setSearchQuery } = props;
 
   const handleChange = (e) => {
     setInput(e.target.value);
+  };
+
+  const handleClick = () => {
+    if (!isValidIPAddress(input)) {
+      setError(true);
+    } else {
+      setSearchQuery(input);
+    }
   };
 
   return (
@@ -21,7 +30,7 @@ const SearchBar = () => {
         onChange={handleChange}
         className={!error ? "" : "error"}
       />
-      <button onClick={}>
+      <button onClick={handleClick}>
         <img src={images.arrowIcon} alt="" />
       </button>
     </StyledSearchBar>
@@ -29,7 +38,7 @@ const SearchBar = () => {
 };
 
 SearchBar.propTypes = {
-  setData: PropTypes.func,
+  setSearchQuery: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
