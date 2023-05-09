@@ -15,15 +15,19 @@ const SearchBar = (props) => {
   };
 
   const handleClick = () => {
+    let isValidInput = false;
+    let searchQuery = {};
+
     if (isValidIPAddress(input)) {
-      setError(false);
-      setSearchQuery({ type: "ip", input: input });
+      isValidInput = true;
+      searchQuery = { type: "ip", input: input };
     } else if (isValidDomain(input)) {
-      setError(false);
-      setSearchQuery({ type: "domain", input: input });
-    } else {
-      setError(true);
+      isValidInput = true;
+      searchQuery = { type: "domain", input: input };
     }
+
+    setError(!isValidInput);
+    setSearchQuery(searchQuery);
   };
 
   return (

@@ -13,10 +13,6 @@ const Search = (props) => {
 };
 
 Search.propTypes = {
-  setData: PropTypes.func,
-};
-
-Search.propTypes = {
   setSearchQuery: PropTypes.func.isRequired,
 };
 
