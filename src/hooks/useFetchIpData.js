@@ -6,14 +6,20 @@ export const useFetchIpData = (searchQuery) => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
-    const url =
-      searchQuery === ""
-        ? `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}`
-        : `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${searchQuery}`;
+    const genericURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}`;
+    const domainSearchURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&domain=${searchQuery.input}`;
+    const IpSearchURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${searchQuery.input}`;
+
+    const URL =
+      searchQuery.type === "ip"
+        ? IpSearchURL
+        : searchQuery.type === "domain"
+        ? domainSearchURL
+        : genericURL;
 
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(URL);
         const data = await response.json();
         setIpData(data);
         setLoading(false);
@@ -24,7 +30,7 @@ export const useFetchIpData = (searchQuery) => {
     };
 
     fetchData();
-  }, [searchQuery]);
+  }, [searchQuery, apiKey]);
 
   return [ipData, loading];
 };

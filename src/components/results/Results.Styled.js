@@ -8,7 +8,7 @@ export const StyledResults = styled.div`
 
   position: absolute;
   z-index: 1;
-  top: 25%;
+  top: 22%;
   left: 50%;
   transform: translateX(-50%);
 
