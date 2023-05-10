@@ -17,11 +17,12 @@ const Map = (props) => {
   };
 
   updateLocation();
+  const centerLat = lat + 0.002;
 
   return (
     <MapContainer
-      center={[lat, lng]}
-      zoom={13}
+      center={[centerLat, lng]}
+      zoom={15}
       zoomControl={false}
       ref={mapRef}
     >
@@ -31,7 +32,17 @@ const Map = (props) => {
       />
 
       <Marker position={[lat, lng]}>
-        <Tooltip>IP: {ip}</Tooltip>
+        <Tooltip className="custom-tool-tip">
+          <p className="marker-info marker-info-ip">
+            IP<span className="marker-span">{ip}</span>
+          </p>
+          <p className="marker-info">
+            LAT: <span className="marker-span">{lat}</span>
+          </p>
+          <p className="marker-info">
+            LNG: <span className="marker-span">{lng}</span>
+          </p>
+        </Tooltip>
       </Marker>
     </MapContainer>
   );

@@ -39,4 +39,26 @@ export const GlobalStyles = createGlobalStyle`
         height: 65%;
         z-index: 0;
     }
+
+    .custom-tool-tip {
+        border-radius: 5px;
+    }
+
+    .marker-info {
+        color: var(--very-dark-gray);
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    .marker-info-ip {
+        flex-direction: column;
+        align-items: center;
+        border-bottom: solid 1px var(--very-dark-gray);
+    }
+
+    .marker-span {
+        font-weight: 500;
+    }
 `;
