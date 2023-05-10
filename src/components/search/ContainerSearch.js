@@ -17,5 +17,5 @@ export const ContainerSearch = styled.div`
 
   @media screen and (min-width: 800px) {
     background-image: url(${images.desktopBG});
-
+  }
 `;

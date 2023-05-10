@@ -30,6 +30,12 @@ const SearchBar = (props) => {
     setSearchQuery(searchQuery);
   };
 
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
+
   return (
     <StyledSearchBar className="container-search-bar">
       <input
@@ -37,6 +43,7 @@ const SearchBar = (props) => {
         placeholder="Search for any IP address or domain"
         value={input.ip}
         onChange={handleChange}
+        onKeyDown={handleEnter}
         className={!error ? "" : "error"}
       />
       <button onClick={handleClick}>

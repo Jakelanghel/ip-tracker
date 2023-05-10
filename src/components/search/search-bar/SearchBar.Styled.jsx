@@ -10,6 +10,10 @@ export const StyledSearchBar = styled.div`
   border-radius: 15px;
   border: solid 4px transparent;
   position: relative;
+
+  & :hover {
+    cursor: pointer;
+  }
   input,
   button {
     border: none;

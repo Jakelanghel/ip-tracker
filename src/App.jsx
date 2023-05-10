@@ -1,22 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GlobalStyles } from "./components/shared/Global";
 import { useFetchIpData } from "./hooks/useFetchIpData";
-import { tstData } from "./tstData";
 
 import Search from "./components/search/Search";
 import Map from "./components/map/Map";
 import Results from "./components/results/Results";
 
+import { tstData } from "./tstData";
+
 function App() {
   const [searchQuery, setSearchQuery] = useState({});
-  const [ipData, loading] = useFetchIpData(searchQuery);
-  // const [ipData, setIpData] = useState(tstData);
+  // const [ipData, loading] = useFetchIpData(searchQuery);
+  const [ipData, loading] = useFetchIpData(tstData);
 
   if (loading) {
     return <h1>Loading..</h1>;
   }
-
-  console.log(ipData);
 
   return (
     <div className="container-app">

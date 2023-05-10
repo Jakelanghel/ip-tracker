@@ -35,6 +35,7 @@ export const StyledResults = styled.div`
   }
 
   @media screen and (min-width: 800px) {
+    min-height: 150px;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
