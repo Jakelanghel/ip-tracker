@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { MapContainer, TileLayer, Marker, Tooltip } from "react-leaflet";
+import { Icon } from "leaflet";
+import { images } from "../../constants/images";
 import PropTypes from "prop-types";
 import "leaflet/dist/leaflet.css";
 
@@ -19,6 +21,12 @@ const Map = (props) => {
   updateLocation();
   const centerLat = lat + 0.002;
 
+  const customIcon = new Icon({
+    iconUrl: images.locationIcon,
+    iconSize: [50, 60],
+    iconAnchor: [25, 60],
+  });
+
   return (
     <MapContainer
       center={[centerLat, lng]}
@@ -31,7 +39,7 @@ const Map = (props) => {
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      <Marker position={[lat, lng]}>
+      <Marker position={[lat, lng]} icon={customIcon}>
         <Tooltip className="custom-tool-tip">
           <p className="marker-info marker-info-ip">
             IP<span className="marker-span">{ip}</span>
