@@ -9,12 +9,14 @@ import Results from "./components/results/Results";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState({});
-  // const [ipData, loading] = useFetchIpData(searchQuery);
-  const [ipData, setIpData] = useState(tstData);
+  const [ipData, loading] = useFetchIpData(searchQuery);
+  // const [ipData, setIpData] = useState(tstData);
 
-  // if (loading) {
-  //   return <h1>Loading..</h1>;
-  // }
+  if (loading) {
+    return <h1>Loading..</h1>;
+  }
+
+  console.log(ipData);
 
   return (
     <div className="container-app">

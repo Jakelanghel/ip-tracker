@@ -4,6 +4,7 @@ import { images } from "../../constants/images";
 export const ContainerSearch = styled.div`
   width: 100%;
   background-image: url(${images.mobileBG});
+  background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
 
@@ -13,4 +14,8 @@ export const ContainerSearch = styled.div`
     font-size: 1.7rem;
     padding: 1.5rem 0;
   }
+
+  @media screen and (min-width: 800px) {
+    background-image: url(${images.desktopBG});
+
 `;

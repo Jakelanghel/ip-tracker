@@ -11,17 +11,19 @@ const Results = (props) => {
   };
 
   const state = getAbbreviation(location.region);
-  const locationString = `${location.city}, ${state} ${location.timezone}`;
 
   return (
-    <StyledResults>
+    <StyledResults className="container-results">
       <div className="container-data">
         <h3 className="title">Ip Address</h3>
         <p className="data">{ip}</p>
       </div>
       <div className="container-data">
         <h3 className="title">location</h3>
-        <p className="data">{locationString}</p>
+        <p className="data">
+          {location.city}, {state}
+          <span className="post-code">{location.postalCode}</span>
+        </p>
       </div>
       <div className="container-data">
         <h3 className="title">Time Zones</h3>

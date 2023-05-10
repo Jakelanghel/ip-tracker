@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const StyledSearchBar = styled.div`
   width: 90%;
+  max-width: 600px;
+
   margin: 0 auto;
   display: flex;
   justify-content: center;
   border-radius: 15px;
-  border: solid 1px var(--very-dark-gray);
-
+  border: solid 4px transparent;
+  position: relative;
   input,
   button {
     border: none;
@@ -33,6 +35,16 @@ export const StyledSearchBar = styled.div`
   }
 
   .error {
-    border: solid 3px red;
+    border: solid 4px var(--red);
+  }
+
+  .error-msg {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -1.5rem;
+    left: 1.5rem;
+    color: var(--red);
   }
 `;

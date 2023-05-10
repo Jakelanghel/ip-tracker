@@ -31,7 +31,7 @@ const SearchBar = (props) => {
   };
 
   return (
-    <StyledSearchBar>
+    <StyledSearchBar className="container-search-bar">
       <input
         type="text"
         placeholder="Search for any IP address or domain"
@@ -42,6 +42,7 @@ const SearchBar = (props) => {
       <button onClick={handleClick}>
         <img src={images.arrowIcon} alt="" />
       </button>
+      {error ? <p className="error-msg">Invalid IP or Domain</p> : null}
     </StyledSearchBar>
   );
 };

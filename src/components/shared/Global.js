@@ -5,7 +5,9 @@ export const GlobalStyles = createGlobalStyle`
     :root {
         --very-dark-gray: hsl(0, 0%, 17%);
         --dark-gray: hsl(0, 0%, 59%);
+        --light-gray: #D9D9D9;
         --white: hsl(0, 0%, 100%);
+        --red: #FF3864;
     }
 
     * {
@@ -61,4 +63,17 @@ export const GlobalStyles = createGlobalStyle`
     .marker-span {
         font-weight: 500;
     }
+
+    @media screen and (min-width: 800px) {
+        .container-search {
+            height: 25%;
+        }
+
+        .leaflet-container {
+            height: 75%;
+            z-index: 0;
+        }
+    }
+
+    
 `;
