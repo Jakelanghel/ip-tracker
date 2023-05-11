@@ -39,6 +39,8 @@ Users should be able to:
 - [Prop Types](https://www.npmjs.com/package/prop-types/)
 - [IPIFY](https://www.ipify.org/)
 - [US-State-Codes](https://www.npmjs.com/package/us-state-codes/)
+- [Netlify](https://app.netlify.com/)
+- Netlify serverless functions
 - Mobile-first workflow
 - CSS custom properties
 - Flexbox

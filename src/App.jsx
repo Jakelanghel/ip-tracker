@@ -10,8 +10,8 @@ import { tstData } from "./tstData";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState({});
-  // const [ipData, loading] = useFetchIpData(searchQuery);
-  const [ipData, loading] = useFetchIpData(tstData);
+  const [ipData, loading] = useFetchIpData(searchQuery);
+  // const [ipData, loading] = useFetchIpData(tstData);
 
   if (loading) {
     return <h1>Loading..</h1>;
