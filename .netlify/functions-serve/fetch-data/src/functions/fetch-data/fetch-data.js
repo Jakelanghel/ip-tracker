@@ -1,4 +1,5 @@
 // functions/fetch-data/fetch-data.js
+var process = require("process");
 var handler = async (event) => {
   const API_KEY = process.env.VITE_API_KEY;
   const { type, input } = event.queryStringParameters;

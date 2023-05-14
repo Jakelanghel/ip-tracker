@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 export const useFetchIpData = (searchQuery) => {
   const [ipData, setIpData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const apiKey = import.meta.env.VITE_API_KEY;
-  console.log(searchQuery.input);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +23,7 @@ export const useFetchIpData = (searchQuery) => {
     };
 
     fetchData();
-  }, [searchQuery, apiKey]);
+  }, [searchQuery]);
 
   return [ipData, loading];
 };
