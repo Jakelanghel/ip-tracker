@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../../home/ekaj/dev/github/frontend/react/frontend-mentor/ip-tracker/ip-tracker/functions/fetch-data/fetch-data.js"],
-  "sourceRoot": "/tmp/tmp-2292900-Sw1j3BRiqxm0",
+  "sourceRoot": "/tmp/tmp-2297617-3avsAWbr4JFd",
   "sourcesContent": ["const handler = async (event) => {\n  const API_KEY = process.env.VITE_API_KEY;\n  const { type, input } = event.queryStringParameters;\n\n  const genericURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;\n  const domainSearchURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&domain=${input}`;\n  const IpSearchURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${input}`;\n\n  const URL =\n    type === \"ip\"\n      ? IpSearchURL\n      : type === \"domain\"\n      ? domainSearchURL\n      : genericURL;\n\n  try {\n    const response = await fetch(URL);\n    const data = await response.json();\n    return {\n      statusCode: 200,\n      body: JSON.stringify(data),\n    };\n  } catch (error) {\n    console.error(error);\n    return {\n      statusCode: 500,\n      body: JSON.stringify({ error: \"Internal Server Error\" }),\n    };\n  }\n};\n\nmodule.exports = { handler };\n"],
   "mappings": ";AAAA,IAAM,UAAU,OAAO,UAAU;AAC/B,QAAM,UAAU,QAAQ,IAAI;AAC5B,QAAM,EAAE,MAAM,UAAU,MAAM;AAE9B,QAAM,aAAa,oDAAoD;AACvE,QAAM,kBAAkB,oDAAoD,kBAAkB;AAC9F,QAAM,cAAc,oDAAoD,qBAAqB;AAE7F,QAAM,MACJ,SAAS,OACL,cACA,SAAS,WACT,kBACA;AAEN,MAAI;AACF,UAAM,WAAW,MAAM,MAAM,GAAG;AAChC,UAAM,OAAO,MAAM,SAAS,KAAK;AACjC,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU,IAAI;AAAA,IAC3B;AAAA,EACF,SAAS,OAAP;AACA,YAAQ,MAAM,KAAK;AACnB,WAAO;AAAA,MACL,YAAY;AAAA,MACZ,MAAM,KAAK,UAAU,EAAE,OAAO,wBAAwB,CAAC;AAAA,IACzD;AAAA,EACF;AACF;AAEA,OAAO,UAAU,EAAE,QAAQ;",
   "names": []
