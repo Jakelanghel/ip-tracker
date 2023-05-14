@@ -1,6 +1,6 @@
 // functions/fetch-data/fetch-data.js
 var handler = async (event) => {
-  const API_KEY = process.env.VITE_API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const { type, input } = event.queryStringParameters;
   const genericURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
   const domainSearchURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&domain=${input}`;
