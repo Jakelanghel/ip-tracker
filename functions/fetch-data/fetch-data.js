@@ -1,4 +1,4 @@
-const handler = async (event) => {
+exports.handler = async (event, context) => {
   const API_KEY = process.env.VITE_API_KEY;
   const { type, input } = event.queryStringParameters;
   console.log(API_KEY);
@@ -28,5 +28,3 @@ const handler = async (event) => {
     };
   }
 };
-
-module.exports = { handler };
