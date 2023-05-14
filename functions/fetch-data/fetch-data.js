@@ -1,3 +1,5 @@
+const process = require("process");
+
 const handler = async (event) => {
   const API_KEY = process.env.VITE_API_KEY;
   const { type, input } = event.queryStringParameters;
