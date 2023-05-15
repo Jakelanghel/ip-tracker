@@ -10,12 +10,12 @@ import { tstData } from "./tstData";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState({});
-  // const [ipData, loading] = useFetchIpData(searchQuery);
-  const [ipData, setIpData] = useState(tstData);
+  const [ipData, loading] = useFetchIpData(searchQuery);
+  // const [ipData, setIpData] = useState(tstData);
 
-  // if (loading) {
-  //   return <h1>Loading..</h1>;
-  // }
+  if (loading) {
+    return <h1>Loading..</h1>;
+  }
 
   return (
     <div className="container-app">
