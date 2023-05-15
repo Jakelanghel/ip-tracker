@@ -6,8 +6,6 @@ import Search from "./components/search/Search";
 import Map from "./components/map/Map";
 import Results from "./components/results/Results";
 
-import { tstData } from "./tstData";
-
 function App() {
   const [searchQuery, setSearchQuery] = useState({
     type: "generic",
