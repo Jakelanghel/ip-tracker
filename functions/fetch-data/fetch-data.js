@@ -1,5 +1,5 @@
 exports.handler = async function (event, context) {
-  const API_KEY = process.env.API_KEY;
+  const API_KEY = process.env.VITE_API_KEY;
   console.log(API_KEY);
   const { type, input } = event.queryStringParameters;
   const genericURL = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
