@@ -9,7 +9,10 @@ import Results from "./components/results/Results";
 import { tstData } from "./tstData";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState({});
+  const [searchQuery, setSearchQuery] = useState({
+    type: "generic",
+    input: "",
+  });
   const [ipData, loading] = useFetchIpData(searchQuery);
   // const [ipData, setIpData] = useState(tstData);
 

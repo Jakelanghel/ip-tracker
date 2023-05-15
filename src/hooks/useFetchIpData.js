@@ -4,6 +4,8 @@ export const useFetchIpData = (searchQuery) => {
   const [ipData, setIpData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  console.log(searchQuery);
+
   useEffect(() => {
     const fetchData = async () => {
       try {

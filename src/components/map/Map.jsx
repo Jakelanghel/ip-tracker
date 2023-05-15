@@ -11,7 +11,7 @@ const Map = (props) => {
   const map = mapRef.current;
 
   const updateLocation = () => {
-    if (searchQuery.type) {
+    if (searchQuery.type !== "generic") {
       map.flyTo([lat, lng], 15, {
         duration: 2,
       });
@@ -36,7 +36,7 @@ const Map = (props) => {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
 
       <Marker position={[lat, lng]} icon={customIcon}>
