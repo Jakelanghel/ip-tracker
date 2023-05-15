@@ -6,13 +6,16 @@ import Search from "./components/search/Search";
 import Map from "./components/map/Map";
 import Results from "./components/results/Results";
 
+import { tstData } from "./tstData";
+
 function App() {
   const [searchQuery, setSearchQuery] = useState({});
-  const [ipData, loading] = useFetchIpData(searchQuery);
+  // const [ipData, loading] = useFetchIpData(searchQuery);
+  const [ipData, setIpData] = useState(tstData);
 
-  if (loading) {
-    return <h1>Loading..</h1>;
-  }
+  // if (loading) {
+  //   return <h1>Loading..</h1>;
+  // }
 
   return (
     <div className="container-app">
