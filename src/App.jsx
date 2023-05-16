@@ -14,22 +14,22 @@ function App() {
   const [ipData, loading] = useFetchIpData(searchQuery);
   // const [ipData, setIpData] = useState(tstData);
 
-  if (loading) {
+  console.log(ipData);
+  if (loading || !ipData.ip) {
     return <h1>Loading..</h1>;
   }
 
   return (
     <div className="container-app">
       <GlobalStyles />
-      <h1>tst</h1>
-      {/* <Search setSearchQuery={setSearchQuery} />
+      <Search setSearchQuery={setSearchQuery} />
       <Results ip={ipData.ip} isp={ipData.isp} location={ipData.location} />
       <Map
         lng={ipData.location.lng}
         lat={ipData.location.lat}
         ip={ipData.ip}
         searchQuery={searchQuery}
-      /> */}
+      />
     </div>
   );
 }

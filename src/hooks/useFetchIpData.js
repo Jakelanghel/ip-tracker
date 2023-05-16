@@ -9,13 +9,13 @@ export const useFetchIpData = (searchQuery) => {
       try {
         fetch(
           `/.netlify/functions/fetch-data?type=${searchQuery.type}&input=${searchQuery.input}`
-        );
-        // .then((res) => res.json())
-        // .then((data) => {
-        //   console.log(data);
-        //   setIpData(data);
-        //   setLoading(false);
-        // });
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setIpData(data);
+            setLoading(false);
+          });
       } catch (error) {
         console.log(error);
         setLoading(false);
