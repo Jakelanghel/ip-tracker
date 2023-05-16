@@ -13,18 +13,18 @@ exports.handler = async function (event, context) {
       ? domainSearchURL
       : genericURL;
 
-  try {
-    const response = await fetch(URL);
-    const data = await response.json();
-    return {
-      statusCode: 200,
-      body: JSON.stringify(data),
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Internal Server Error" }),
-    };
+  // try {
+  //   const response = await fetch(URL);
+  //   const data = await response.json();
+  //   return {
+  //     statusCode: 200,
+  //     body: JSON.stringify(data),
+  //   };
+  // } catch (error) {
+  //   console.error(error);
+  //   return {
+  //     statusCode: 500,
+  //     body: JSON.stringify({ error: "Internal Server Error" }),
+  //   };
   }
 };

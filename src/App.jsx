@@ -21,14 +21,15 @@ function App() {
   return (
     <div className="container-app">
       <GlobalStyles />
-      <Search setSearchQuery={setSearchQuery} />
+      <h1>tst</h1>
+      {/* <Search setSearchQuery={setSearchQuery} />
       <Results ip={ipData.ip} isp={ipData.isp} location={ipData.location} />
       <Map
         lng={ipData.location.lng}
         lat={ipData.location.lat}
         ip={ipData.ip}
         searchQuery={searchQuery}
-      />
+      /> */}
     </div>
   );
 }
