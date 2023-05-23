@@ -17,6 +17,7 @@ exports.handler = async function (event, context) {
   try {
     const response = await fetch(URL);
     const data = await response.json();
+    console.log("data:", data); // Add this line to check the retrieved data
     return {
       statusCode: 200,
       body: JSON.stringify(data),
