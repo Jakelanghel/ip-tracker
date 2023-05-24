@@ -1,4 +1,4 @@
-import { API_KEY } from "../../dist/config";
+const { VITE_API_KEY } = require("../../dist/config");
 
 exports.handler = async function (event, context) {
   console.log(API_KEY + "APIKEY");
