@@ -5,8 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "postbuild": "echo 'export const API_KEY = $VITE_API_KEY' > dist/config.js",
+    "build": "vite build && echo $VITE_API_KEY' > dist/config.js",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "netlify": "./node_modules/.bin/netlify"
