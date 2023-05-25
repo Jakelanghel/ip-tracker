@@ -1,5 +1,6 @@
+const { API_KEY } = require("../dist/config");
+
 exports.handler = async function (event, context) {
-  const API_KEY = process.env.VITE_API_KEY;
   console.log(API_KEY + "APIKEY");
   const { type, input } = event.queryStringParameters;
 
