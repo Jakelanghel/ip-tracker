@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 # api-keys
-.env
-
+.env.deploy-preview
+.env.production
 
 # Editor directories and files
 .vscode/*
