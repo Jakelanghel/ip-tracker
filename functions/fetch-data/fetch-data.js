@@ -1,4 +1,4 @@
-const { API_KEY } = require("../dist/config");
+const { API_KEY } = require("../../public/netlify-context");
 
 exports.handler = async function (event, context) {
   console.log(API_KEY + "APIKEY");
