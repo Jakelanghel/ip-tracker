@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "echo \"export const API_KEY = '$CONTEXT'\" > public/netlify-context.js && vite build",
+    "build": "echo \"module.exports = { API_KEY: '$CONTEXT' };\" > public/netlify-context.js && vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "netlify": "./node_modules/.bin/netlify"
