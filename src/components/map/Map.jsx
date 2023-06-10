@@ -6,12 +6,12 @@ import PropTypes from "prop-types";
 import "leaflet/dist/leaflet.css";
 
 const Map = (props) => {
-  const { lng, lat, ip, searchQuery } = props;
+  const { lng, lat, ip, search } = props;
   const mapRef = useRef(null);
   const map = mapRef.current;
 
   const updateLocation = () => {
-    if (searchQuery.type !== "generic") {
+    if (search) {
       map.flyTo([lat, lng], 15, {
         duration: 2,
       });
@@ -60,7 +60,7 @@ Map.propTypes = {
   lng: PropTypes.number.isRequired,
   lat: PropTypes.number.isRequired,
   ip: PropTypes.string.isRequired,
-  searchQuery: PropTypes.object.isRequired,
+  search: PropTypes.bool.isRequired,
 };
 
 export default Map;

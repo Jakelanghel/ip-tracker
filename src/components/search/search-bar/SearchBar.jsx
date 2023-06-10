@@ -2,32 +2,28 @@ import { useState } from "react";
 import { PropTypes } from "prop-types";
 import { StyledSearchBar } from "./SearchBar.Styled";
 import { images } from "../../../constants/images";
-import { isValidIPAddress } from "../util/isValidIPAddress";
-import { isValidDomain } from "../util/isValidDomain";
+import { checkInput } from "../util/checkInput";
 
 const SearchBar = (props) => {
+  const { setUrl, setSearch } = props;
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
-  const { setSearchQuery } = props;
 
   const handleChange = (e) => {
     setInput(e.target.value);
   };
 
   const handleClick = () => {
-    let isValidInput = false;
-    let searchQuery = {};
-
-    if (isValidIPAddress(input)) {
-      isValidInput = true;
-      searchQuery = { type: "ip", input: input };
-    } else if (isValidDomain(input)) {
-      isValidInput = true;
-      searchQuery = { type: "domain", input: input };
+    const isValidInput = checkInput(input);
+    if (!isValidInput) {
+      setError(true);
+    } else {
+      setUrl(
+        `https://dynamic-api-proxy.onrender.com/api/ipify?domain=${input}`
+      );
+      setSearch(true);
+      setError(false);
     }
-
-    setError(!isValidInput);
-    setSearchQuery(searchQuery);
   };
 
   const handleEnter = (e) => {
@@ -35,6 +31,11 @@ const SearchBar = (props) => {
       handleClick();
     }
   };
+
+  const errorClass = error ? "error" : "";
+  const errorMsgElement = error ? (
+    <p className="error-msg">Invalid IP or Domain</p>
+  ) : null;
 
   return (
     <StyledSearchBar className="container-search-bar">
@@ -44,18 +45,19 @@ const SearchBar = (props) => {
         value={input.ip}
         onChange={handleChange}
         onKeyDown={handleEnter}
-        className={!error ? "" : "error"}
+        className={errorClass}
       />
       <button onClick={handleClick}>
         <img src={images.arrowIcon} alt="" />
       </button>
-      {error ? <p className="error-msg">Invalid IP or Domain</p> : null}
+      {errorMsgElement}
     </StyledSearchBar>
   );
 };
 
 SearchBar.propTypes = {
-  setSearchQuery: PropTypes.func.isRequired,
+  setUrl: PropTypes.func.isRequired,
+  setSearch: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

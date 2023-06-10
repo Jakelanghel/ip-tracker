@@ -1,34 +1,38 @@
 import { useState } from "react";
 import { GlobalStyles } from "./components/shared/Global";
-import { useFetchIpData } from "./hooks/useFetchIpData";
-
+import { tstData } from "./tstData";
+import { useFetch } from "./hooks/useFetch";
 import Search from "./components/search/Search";
+
 import Map from "./components/map/Map";
 import Results from "./components/results/Results";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState({
-    type: "generic",
-    input: "",
-  });
-  const [ipData, loading] = useFetchIpData(searchQuery);
-  // const [ipData, setIpData] = useState(tstData);
+  const [url, setUrl] = useState(
+    "https://dynamic-api-proxy.onrender.com/api/ipify"
+  );
 
-  console.log(ipData);
-  if (loading || !ipData.ip) {
+  const [search, setSearch] = useState(false);
+
+  // test data comment out loading logic and real data to use
+  // const data = tstData;
+
+  const [data, loading] = useFetch(url);
+
+  if (loading || !data) {
     return <h1>Loading..</h1>;
   }
 
   return (
     <div className="container-app">
       <GlobalStyles />
-      <Search setSearchQuery={setSearchQuery} />
-      <Results ip={ipData.ip} isp={ipData.isp} location={ipData.location} />
+      <Search setUrl={setUrl} setSearch={setSearch} />
+      <Results ip={data.ip} isp={data.isp} location={data.location} />
       <Map
-        lng={ipData.location.lng}
-        lat={ipData.location.lat}
-        ip={ipData.ip}
-        searchQuery={searchQuery}
+        lng={data.location.lng}
+        lat={data.location.lat}
+        ip={data.ip}
+        search={search}
       />
     </div>
   );
