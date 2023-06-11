@@ -47,7 +47,7 @@ const SearchBar = (props) => {
         onKeyDown={handleEnter}
         className={errorClass}
       />
-      <button onClick={handleClick}>
+      <button onClick={handleClick} aria-label="submit">
         <img src={images.arrowIcon} alt="" />
       </button>
       {errorMsgElement}

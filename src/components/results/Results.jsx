@@ -15,22 +15,22 @@ const Results = (props) => {
   return (
     <StyledResults className="container-results">
       <div className="container-data">
-        <h3 className="title">Ip Address</h3>
+        <h2 className="title">Ip Address</h2>
         <p className="data">{ip}</p>
       </div>
       <div className="container-data">
-        <h3 className="title">location</h3>
+        <h2 className="title">location</h2>
         <p className="data">
           {location.city}, {state}
           <span className="post-code">{location.postalCode}</span>
         </p>
       </div>
       <div className="container-data">
-        <h3 className="title">Time Zones</h3>
+        <h2 className="title">Time Zones</h2>
         <p className="data">{location.timezone}</p>
       </div>
       <div className="container-data">
-        <h3 className="title">ISP</h3>
+        <h2 className="title">ISP</h2>
         <p className="data">{isp}</p>
       </div>
     </StyledResults>

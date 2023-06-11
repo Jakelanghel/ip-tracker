@@ -38,11 +38,11 @@ function App() {
   );
 
   return (
-    <div className="container-app">
+    <main className="container-app">
       <GlobalStyles />
 
       {renderedElements}
-    </div>
+    </main>
   );
 }
 
