@@ -14,6 +14,7 @@ const SearchBar = (props) => {
   };
 
   const handleClick = () => {
+    // check that user input is a valid domain name or IP address
     const isValidInput = checkInput(input);
     if (!isValidInput) {
       setError(true);
@@ -21,6 +22,7 @@ const SearchBar = (props) => {
       setUrl(
         `https://dynamic-api-proxy.onrender.com/api/ipify?domain=${input}`
       );
+      // set search to true so map will fly to new location
       setSearch(true);
       setError(false);
     }
@@ -32,6 +34,7 @@ const SearchBar = (props) => {
     }
   };
 
+  // If user input is invalid set error class and show error msg
   const errorClass = error ? "error" : "";
   const errorMsgElement = error ? (
     <p className="error-msg">Invalid IP or Domain</p>
