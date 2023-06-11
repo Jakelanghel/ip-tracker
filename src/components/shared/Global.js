@@ -31,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
     .container-app {
         height: 100%;
         position: relative;
+      
     }
 
     .container-search {
@@ -75,5 +76,15 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    @media screen and (min-width: 1200px) {
+        .container-search {
+            height: 30%;
+        }
+
+        .leaflet-container {
+            height: 70%;
+            z-index: 0;
+        }
+    }
     
 `;

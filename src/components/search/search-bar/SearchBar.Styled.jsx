@@ -36,6 +36,7 @@ export const StyledSearchBar = styled.div`
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: var(--very-dark-gray);
+    border: solid 4px transparent;
   }
 
   .error {

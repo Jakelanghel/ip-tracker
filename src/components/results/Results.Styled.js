@@ -6,6 +6,7 @@ export const StyledResults = styled.div`
   background: var(--white);
   padding: 1.5rem;
   border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   position: absolute;
   z-index: 1;
@@ -62,9 +63,10 @@ export const StyledResults = styled.div`
     }
   }
 
-  @media screen and (min-width: 1400px) {
+  @media screen and (min-width: 1200px) {
     max-width: 1100px;
     padding: 2.5rem;
+    top: 22%;
 
     .container-data {
       padding-left: 2rem;

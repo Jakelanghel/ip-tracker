@@ -18,4 +18,10 @@ export const ContainerSearch = styled.div`
   @media screen and (min-width: 800px) {
     background-image: url(${images.desktopBG});
   }
+  @media screen and (min-width: 1200px) {
+    h1 {
+      font-size: 2.25rem;
+      padding: 1.5rem 0;
+    }
+  }
 `;

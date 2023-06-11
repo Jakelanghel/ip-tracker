@@ -36,17 +36,17 @@ Users should be able to:
 
 - [React](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
+- [React Spinners](https://www.npmjs.com/package/react-spinners/)
+- [React Leaflet](https://react-leaflet.js.org/)
 - [Prop Types](https://www.npmjs.com/package/prop-types/)
 - [IPIFY](https://www.ipify.org/)
 - [US-State-Codes](https://www.npmjs.com/package/us-state-codes/)
 - [Netlify](https://app.netlify.com/)
-- Netlify serverless functions
+- Node API proxy
 - Mobile-first workflow
 - CSS custom properties
 - Flexbox
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
