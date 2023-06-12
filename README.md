@@ -42,7 +42,7 @@ Users should be able to:
 - [IPIFY](https://www.ipify.org/)
 - [US-State-Codes](https://www.npmjs.com/package/us-state-codes/)
 - [Netlify](https://app.netlify.com/)
-- Node API proxy
+- [Node API Proxy](https://github.com/Jakelanghel/api-proxy-server/)
 - Mobile-first workflow
 - CSS custom properties
 - Flexbox

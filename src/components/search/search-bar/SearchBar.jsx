@@ -31,6 +31,7 @@ const SearchBar = (props) => {
   const handleEnter = (e) => {
     if (e.key === "Enter") {
       handleClick();
+      e.target.blur();
     }
   };
 
