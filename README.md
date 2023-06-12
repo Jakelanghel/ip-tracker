@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Front End Mentor](https://www.frontendmentor.io/solutions/iptrak-built-with-react-and-node-proxy-server-KrxBAmup35)
+- Live Site URL: [ip-trak.netlify.app](https://ip-trak.netlify.app/)
 
 ### Built with
 
@@ -49,4 +49,4 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Jakelanghel](https://www.frontendmentor.io/profile/Jakelanghel)
